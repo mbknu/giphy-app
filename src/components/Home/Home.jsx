@@ -1,37 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Axios from "axios";
-import { API_KEY, API_URL } from "../../constants";
+import getApiUrl from "../../utils/getApiUrl";
+import GifsList from "../Gifs/GifsList";
+import { SearchContext } from "../../utils/SearchContext";
+import getInitialFavorites from "../../utils/getInitialFavorite";
 
 const Home = () => {
-  const [categories, setCategories] = useState([]);
+  const [gifsList, setGifsList] = useState([]);
+  const [favorites, setFavorites] = useState(getInitialFavorites());
+  const { searchValue } = useContext(SearchContext);
 
   useEffect(() => {
-    const getApiUrl = `${API_URL}categories?api_key=${API_KEY}`;
+    const apiUrl = getApiUrl(searchValue);
 
-    Axios.get(getApiUrl)
+    Axios.get(apiUrl)
       .then((response) => response.data.data)
       .then((data) => {
-        setCategories(data);
+        setGifsList(data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [searchValue]);
 
-  console.log("cat", categories);
+  useEffect(() => {
+    localStorage.setItem("addGifToFavorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+  const toggleFavoriteGif = (gif) => {
+    if (!favorites.some((favoriteGif) => favoriteGif.id === gif.id)) {
+      setFavorites([...favorites, gif]);
+    } else {
+      const newFavorites = favorites.filter(
+        (favorite) => favorite.id !== gif.id
+      );
+      setFavorites(newFavorites);
+    }
+  };
 
   return (
     <div>
-      {categories.map((categorie) => (
-        <div>
-          {categorie.name} :
-          <img
-            src={categorie.gif.images.downsized_large.url}
-            alt="gif"
-            width="250"
-          />
-        </div>
-      ))}
+      <GifsList
+        list={gifsList}
+        addGifoFavorites={toggleFavoriteGif}
+        favoritesList={favorites}
+      />
     </div>
   );
 };

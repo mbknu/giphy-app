@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { API_KEY, API_URL } from "../constants";
 
-const url = `${API_URL}random?api_key=${API_KEY}`;
+const url = `${API_URL}/random?api_key=${API_KEY}`;
 
 const useRandomGif = (tag) => {
   const [gif, setGif] = useState("");

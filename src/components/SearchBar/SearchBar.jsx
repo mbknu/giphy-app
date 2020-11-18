@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { debounce } from "lodash";
+import { SearchContext } from "../../utils/SearchContext";
 
-const SearchBar = (submitSearchValue) => {
-  const [searchValue, setSearchValue] = useState("");
-  console.log("searchValue", searchValue);
+const SearchBar = () => {
+  // const [searchValue, setSearchValue] = useState("");
+  const { searchValue, setSearchValue } = useContext(SearchContext);
+
   return (
     <div>
       <input
@@ -12,11 +14,11 @@ const SearchBar = (submitSearchValue) => {
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value);
-          const debouncedSbmit = debounce(
-            () => submitSearchValue(e.target.value),
-            1000
-          );
-          debouncedSbmit();
+          // const debouncedSbmit = debounce(
+          //   () => submitSearchValue(e.target.value),
+          //   1000
+          // );
+          // debouncedSbmit();
         }}
       ></input>
     </div>
