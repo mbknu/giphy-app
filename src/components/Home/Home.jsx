@@ -42,7 +42,7 @@ const Home = () => {
     <div>
       <GifsList
         list={gifsList}
-        addGifoFavorites={toggleFavoriteGif}
+        addGifToFavorites={toggleFavoriteGif}
         favoritesList={favorites}
       />
     </div>

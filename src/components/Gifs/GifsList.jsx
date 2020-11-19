@@ -1,7 +1,7 @@
 import React from "react";
 import GifItem from "./GifItem";
 
-const GifsList = ({ list, addGifoFavorites, favoritesList }) => {
+const GifsList = ({ list, addGifToFavorites, favoritesList }) => {
   console.log("list dans giflist", list);
   return (
     <div>
@@ -12,8 +12,8 @@ const GifsList = ({ list, addGifoFavorites, favoritesList }) => {
         return (
           <GifItem
             gif={gif}
-            addToFavorite={() => addGifoFavorites(gif)}
-            removeFromFavorite={() => addGifoFavorites(gif)}
+            addToFavorite={() => addGifToFavorites(gif)}
+            removeFromFavorite={() => addGifToFavorites(gif)}
             isFavorite={isFavorite}
           />
         );

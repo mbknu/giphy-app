@@ -24,6 +24,7 @@ const Favorited = () => {
         <GifItem
           key={gif.id}
           gif={gif}
+          isFavorite
           removeFromFavorite={() => removeFromFavorite(gif)}
         />
       ))}
