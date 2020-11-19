@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import Axios from "axios";
 import GifItem from "../Gifs/GifItem";
 import { API_KEY, API_URL } from "../../constants";
-import Home from "../Home/Home";
 import { SearchContext } from "../../utils/SearchContext";
 
 const TrendingGif = () => {
@@ -25,7 +24,6 @@ const TrendingGif = () => {
   return (
     <div className="gifList-wrapper">
       <div className="gifList-container">
-        {searchValue.length === 0 && <Home />}
         {gifsList.map((gif) => (
           <GifItem key={gif.id} gif={gif} />
         ))}

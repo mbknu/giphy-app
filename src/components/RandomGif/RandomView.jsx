@@ -4,7 +4,7 @@ import RandomTagGif from "./RandomTagGif";
 
 export const RandomView = () => {
   return (
-    <div className="gifList-container">
+    <div className="gifList-container-random">
       <RandomGif />
       <RandomTagGif />
     </div>

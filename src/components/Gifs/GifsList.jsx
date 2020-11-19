@@ -4,7 +4,7 @@ import GifItem from "./GifItem";
 
 import "./GifList.css";
 
-const GifsList = ({ list, addGifToFavorites, favoritesList }) => {
+const GifsList = ({ list, toggleFavorite, favoritesList }) => {
   return (
     <div className="gifList-wrapper">
       {list.map((gif) => {
@@ -15,8 +15,7 @@ const GifsList = ({ list, addGifToFavorites, favoritesList }) => {
           <GifItem
             key={gif.id}
             gif={gif}
-            addToFavorite={() => addGifToFavorites(gif)}
-            removeFromFavorite={() => addGifToFavorites(gif)}
+            toggleFavorite={() => toggleFavorite(gif)}
             isFavorite={isFavorite}
           />
         );

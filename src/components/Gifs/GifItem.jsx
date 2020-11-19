@@ -4,40 +4,42 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as fasFaStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as falFaStar } from "@fortawesome/free-regular-svg-icons";
 
-const GitItem = ({ gif, isFavorite, addToFavorite, removeFromFavorite }) => {
+import "./GifItem.css";
+
+import Loading from "../Loading/Loading";
+
+const GitItem = ({ gif, isFavorite, toggleFavorite }) => {
+  const image = gif.images.downsized_large;
+  const ratio = parseFloat(image.height) / parseFloat(image.width);
+  const width = 250;
+  const height = width * ratio;
+
+  const style = {
+    width: `${width}px`,
+    height: `${height}px`,
+    backgroundColor: "blue",
+    marginBottom: "10px",
+  };
+
   return (
-    <div
-      key={gif.id}
-      style={{ display: "flex", position: "relative", marginBottom: "1rem" }}
-    >
-      {isFavorite ? (
+    <div key={gif.id} className="gif-item-wrapper" style={style}>
+      <div
+        className={
+          isFavorite ? `gif-on-hover` : `gif-on-hover gif-on-hover-hidden`
+        }
+      >
         <FontAwesomeIcon
-          style={{
-            color: "#F9C70C",
-            fontSize: "30px",
-            cursor: "pointer",
-            position: "absolute",
-          }}
-          icon={fasFaStar}
-          onClick={() => removeFromFavorite(gif)}
+          icon={isFavorite ? fasFaStar : falFaStar}
+          onClick={() => toggleFavorite(gif)}
         />
-      ) : (
-        <FontAwesomeIcon
-          icon={falFaStar}
-          style={{
-            fontSize: "30px",
-            cursor: "pointer",
-            color: "#F9C70C",
-            position: "absolute",
-          }}
-          onClick={() => addToFavorite(gif)}
-        />
-      )}
+      </div>
+      <Loading className="gif-loader" />
       <img
-        src={gif.images.downsized_large.url}
+        className="gif-image"
+        src={image.url}
         alt="gif"
-        width="250"
-        heigth="300"
+        width={width}
+        height={height}
       />
     </div>
   );

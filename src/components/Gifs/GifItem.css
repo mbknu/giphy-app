@@ -1,0 +1,57 @@
+/* .gif-on-hover {
+  font-size: 2em !important;
+  visibility: hidden;
+  opacity: 0;
+  cursor: pointer;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.gif-on-hover:hover {
+  visibility: visible;
+} */
+
+.gif-item-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.gif-on-hover {
+  color: #f9c70c;
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+  z-index: 2;
+}
+.gif-on-hover-hidden {
+  display: none;
+}
+.gif-item-wrapper:hover > .gif-on-hover {
+  cursor: pointer;
+  display: block;
+}
+
+.gif-loader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gif-image {
+  z-index: 1;
+  position: relative;
+}
+
+/* .gif-on-hover:hover {
+  color: #f9c70c;
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+  visibility: visible !important;
+} */

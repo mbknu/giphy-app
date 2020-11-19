@@ -1,17 +1,13 @@
 .gifList-wrapper {
-  max-width: 1300px;
-  width: 90%;
+  width: 55%;
   margin: auto;
-  padding: 1em;
-  -webkit-column-count: 4;
-  -moz-column-count: 4;
+  padding: 10px;
   column-count: 4;
-  -webkit-column-width: 15em;
-  -moz-column-width: 15em;
   column-width: 15em;
 }
-/* .gifList-container {
-  width: 80%;
+.gifList-container-random {
   display: flex;
-  flex-wrap: wrap;
-} */
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}

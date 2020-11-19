@@ -19,13 +19,13 @@ const Favorited = () => {
     setFavorites(newFavorite);
   };
   return (
-    <div>
+    <div className="gifList-wrapper">
       {favorites.map((gif) => (
         <GifItem
           key={gif.id}
           gif={gif}
           isFavorite
-          removeFromFavorite={() => removeFromFavorite(gif)}
+          toggleFavorite={() => removeFromFavorite(gif)}
         />
       ))}
     </div>

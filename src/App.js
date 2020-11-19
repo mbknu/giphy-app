@@ -1,5 +1,10 @@
 import React, { useMemo, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 
 import Favorited from "./components/Favorited/Favorited";
 import Home from "./components/Home/Home";
@@ -11,27 +16,30 @@ import RandomView from "./components/RandomGif/RandomView";
 import { SearchContext } from "./utils/SearchContext";
 
 function App() {
-  const [searchValue, setSearchValue] = useState("boobs");
+  const [searchValue, setSearchValue] = useState("");
 
   const providerValue = useMemo(() => ({ searchValue, setSearchValue }), [
     searchValue,
     setSearchValue,
   ]);
 
+  const isSearchValueEmpty = searchValue.length === "";
+  const isNotHomePage = window.location.pathname !== "/";
+
   return (
     <Router>
-      <div className="App">
-        <SearchContext.Provider value={providerValue}>
-          <NavBar />
-          <Route path="/" exact component={Home} />
+      {!isSearchValueEmpty && isNotHomePage && <Redirect push to="/" />}
+      <SearchContext.Provider value={providerValue}>
+        <NavBar />
+        <div className="wrapper-app">
           <Switch>
-            <Route path="/favorited" component={Favorited} />
-            <Route path="/random" component={RandomView} />
-            <Route path="/trending" component={TrendingGif} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/favorited" component={Favorited} />
+            <Route exact path="/random" component={RandomView} />
+            <Route exact path="/trending" component={TrendingGif} />
           </Switch>
-        </SearchContext.Provider>
-      </div>
-      ;
+        </div>
+      </SearchContext.Provider>
     </Router>
   );
 }
