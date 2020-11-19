@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+
+import useRandomGif from "../../utils/useRandomGif";
 
 const RandomGif = () => {
-    return (
-        <div>
-            <p>Random Gif</p>
-        </div>
-    )
-}
+  const { gif, fetchGif } = useRandomGif();
 
-export default RandomGif
+  return (
+    <div className="container">
+      <h1> Random Gif</h1>
+      <img width="500" src={gif} alt="Random Gif" />
+      <button onClick={fetchGif}>CLICK FOR NEW</button>
+    </div>
+  );
+};
+
+export default RandomGif;
