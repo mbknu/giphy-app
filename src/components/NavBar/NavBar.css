@@ -1,0 +1,22 @@
+/* .navbar {
+  width: 100%;
+  min-height: 6vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+  transition: all 0.7s ease-in;
+  position: fixed;
+} */
+.navbar {
+  width: 100%;
+  min-height: 6vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  background-color: #eee;
+  transition: all 0.7s ease-in;
+  align-items: center;
+  text-decoration: none;
+}

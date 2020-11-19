@@ -1,16 +1,19 @@
 import React from "react";
+
 import GifItem from "./GifItem";
 
+import "./GifList.css";
+
 const GifsList = ({ list, addGifToFavorites, favoritesList }) => {
-  console.log("list dans giflist", list);
   return (
-    <div>
+    <div className="gifList-wrapper">
       {list.map((gif) => {
         const isFavorite = favoritesList.some((favorite) => {
           return favorite.id === gif.id;
         });
         return (
           <GifItem
+            key={gif.id}
             gif={gif}
             addToFavorite={() => addGifToFavorites(gif)}
             removeFromFavorite={() => addGifToFavorites(gif)}

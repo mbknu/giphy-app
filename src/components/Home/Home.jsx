@@ -1,12 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import Axios from "axios";
-import getApiUrl from "../../utils/getApiUrl";
+// import InfiniteScroll from "react-infinite-scroll-component";
+
 import GifsList from "../Gifs/GifsList";
+
+import getApiUrl from "../../utils/getApiUrl";
 import { SearchContext } from "../../utils/SearchContext";
 import getInitialFavorites from "../../utils/getInitialFavorite";
 
-const Home = () => {
+const Home = ({ element }) => {
   const [gifsList, setGifsList] = useState([]);
+  const [currentOffSet, setCurrentOffSet] = useState(0);
   const [favorites, setFavorites] = useState(getInitialFavorites());
   const { searchValue } = useContext(SearchContext);
 
@@ -37,14 +41,23 @@ const Home = () => {
       setFavorites(newFavorites);
     }
   };
-
+  console.log(gifsList);
   return (
     <div>
-      <GifsList
-        list={gifsList}
-        addGifToFavorites={toggleFavoriteGif}
-        favoritesList={favorites}
-      />
+      {searchValue.length === 0 && <div>No Gif</div>}
+      {/* <InfiniteScroll
+        dataLength={gifsList.length}
+        next={setCurrentOffSet(currentOffSet + 1)}
+        hasMore={true}
+        loader={<h4>Loading...</h4>}
+      ></InfiniteScroll> */}
+      {searchValue.length > 0 && (
+        <GifsList
+          list={gifsList}
+          addGifToFavorites={toggleFavoriteGif}
+          favoritesList={favorites}
+        />
+      )}
     </div>
   );
 };
