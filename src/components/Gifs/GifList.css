@@ -1,0 +1,13 @@
+.gifList-wrapper {
+  width: 55%;
+  margin: auto;
+  padding: 10px;
+  column-count: 4;
+  column-width: 15em;
+}
+.gifList-container-random {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
