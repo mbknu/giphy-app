@@ -1,16 +1,3 @@
-/* .gif-on-hover {
-  font-size: 2em !important;
-  visibility: hidden;
-  opacity: 0;
-  cursor: pointer;
-  padding: 0.5em;
-  cursor: pointer;
-}
-
-.gif-on-hover:hover {
-  visibility: visible;
-} */
-
 .gif-item-wrapper {
   position: relative;
   margin-bottom: 5px;
@@ -47,11 +34,3 @@
   z-index: 1;
   position: relative;
 }
-
-/* .gif-on-hover:hover {
-  color: #f9c70c;
-  cursor: pointer;
-  font-size: 30px;
-  position: absolute;
-  visibility: visible !important;
-} */
