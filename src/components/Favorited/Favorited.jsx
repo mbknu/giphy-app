@@ -14,10 +14,6 @@ const Favorited = () => {
     setFavorites(newFavorite);
   };
 
-  const removeAllFavorite = () => {
-    const newFavorite = [];
-    setFavorites(newFavorite);
-  };
   return (
     <div className="gifList-wrapper">
       {favorites.map((gif) => (

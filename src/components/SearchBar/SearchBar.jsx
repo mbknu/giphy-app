@@ -13,6 +13,7 @@ const SearchBar = () => {
     setSearchValue(search);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const delayedQuery = useCallback(debounce(updateQuery, 500), [search]);
 
   const onChange = (e) => {

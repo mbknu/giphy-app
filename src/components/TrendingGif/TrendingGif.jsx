@@ -6,13 +6,11 @@ import getInitialFavorites from "../../utils/getInitialFavorite";
 
 const TrendingGif = (toggleFavorite) => {
   const [gifsList, setGifsList] = useState([]);
-  const [favorites, setFavorites] = useState(getInitialFavorites());
+  const [favorites] = useState(getInitialFavorites());
 
   useEffect(() => {
     localStorage.setItem("addGifToFavorites", JSON.stringify(favorites));
   }, [favorites]);
-
-
 
   useEffect(() => {
     const getApiUrl = `${API_URL}/trending?api_key=${API_KEY}`;
