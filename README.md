@@ -14,6 +14,25 @@ My mains objectives were :\
 -You can add gif to favorites or remove\
 -You can select a random gif or a random gif in a specific categorie
 
+## How to launch the Project
+
+### Install
+
+First of all you need to clone the repostory to a local folder\
+![Screenshot](github.png)
+
+Then you have to install the dependencies by typing in your terminal : npm i --save
+
+You will need a key to get access to the API from [GIPHY](https://giphy.com/)
+Once you have the key juste create a new file ".env" in the root of the project, you should have this :\
+![Screenshot](env.png)\
+Open the .env file and add your key after : REACT_APP_API_KEY=\
+You should have something like : REACT_APP_API_KEY="540a5zea4e55a4e"
+
+### Run
+
+Everything is good now just run the project by typing in your terminal : npm start
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -50,29 +69,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-## How to launch the Project
-
-### Install
-
-First of all you need to clone the repostory to a local folder\
-![Screenshot](github.png)
-
-Then you have to install the dependencies by typing in your terminal : npm i --save
-
-You will need a key to get access to the API from [GIPHY](https://giphy.com/)
-
-Once you have the key juste create a new file ".env" in the root of the project, you should have this :\
-![Screenshot](env.png)\
-Open the .env file and add your key after : REACT_APP_API_KEY=\
-You should have something like : REACT_APP_API_KEY="540a5zea4e55a4e"
-
-### Run
-
-Everything is good now just run the project by typing in your terminal : npm start
