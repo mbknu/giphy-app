@@ -8,11 +8,11 @@ This Project was created to improve my coding experience with an API.
 
 ![](giphy.gif)
 
-My mains objectives were :
--Anytime you do a search you can see the results
--You can chose by categories
--You can add gif to favorites or remove
--You can select a random gif or a random gif in a specific categorie
+My mains objectives were :\
+-Anytime you do a search you can see the results\
+-You can chose by categories\
+-You can add gif to favorites or remove\
+-You can select a random gif or a random gif in a specific categorie\
 
 ## Available Scripts
 
@@ -61,17 +61,17 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Install
 
-First of all you need to clone the repostory to a local folder
+First of all you need to clone the repostory to a local folder\
 ![Screenshot](github.png)
 
-Then you have to install the dependencies by typing in your terminal : npm i --save
+Then you have to install the dependencies by typing in your terminal : npm i --save\
 
 You will need a key to get access to the API from [GIPHY](https://giphy.com/)
 
-Once you have the key juste create a new file ".env" in the root of the project, you should have this :
+Once you have the key juste create a new file ".env" in the root of the project, you should have this :\
 ![Screenshot](env.png)
-Open the .env file and add your key after : REACT_APP_API_KEY=
-You should have something like : REACT_APP_API_KEY="540a5zea4e55a4e".
+Open the .env file and add your key after : REACT_APP_API_KEY=\
+You should have something like : REACT_APP_API_KEY="540a5zea4e55a4e".\
 
 ### Run
 
