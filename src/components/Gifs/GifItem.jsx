@@ -17,7 +17,7 @@ const GitItem = ({ gif, isFavorite, toggleFavorite }) => {
   const style = {
     width: `${width}px`,
     height: `${height}px`,
-    backgroundColor: "blue",
+    backgroundColor: "#eee",
     marginBottom: "10px",
   };
 
