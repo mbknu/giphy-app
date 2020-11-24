@@ -57,8 +57,8 @@ const Home = () => {
       )}
       {categoriesList.length > 0 && (
         <div className="categorie-wrapper">
-          {categoriesList.map((categorie) => (
-            <div>
+          {categoriesList.map((categorie, index) => (
+            <div key={index}>
               <p
                 className="categorie-name"
                 style={{ cursor: "pointer" }}

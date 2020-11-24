@@ -11,13 +11,19 @@ const NavBar = () => {
   return (
     <div className="wrapper-nav">
       <div className="navbar">
-        <Link to="/" onClick={() => setSearchValue("")}>
+        <Link className="nav-link" to="/" onClick={() => setSearchValue("")}>
           Home
         </Link>
         <SearchBar />
-        <Link to="/trending">Trending</Link>
-        <Link to="/random">Random</Link>
-        <Link to="/favorited">Favorites</Link>
+        <Link className="nav-link" to="/trending">
+          Trending
+        </Link>
+        <Link className="nav-link" to="/random">
+          Random
+        </Link>
+        <Link className="nav-link" to="/favorited">
+          Favorites
+        </Link>
       </div>
     </div>
   );
