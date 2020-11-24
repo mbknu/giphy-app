@@ -12,7 +12,7 @@ My mains objectives were :\
 -Anytime you do a search you can see the results\
 -You can chose by categories\
 -You can add gif to favorites or remove\
--You can select a random gif or a random gif in a specific categorie\
+-You can select a random gif or a random gif in a specific categorie
 
 ## Available Scripts
 
@@ -64,7 +64,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 First of all you need to clone the repostory to a local folder\
 ![Screenshot](github.png)
 
-Then you have to install the dependencies by typing in your terminal : npm i --save \
+Then you have to install the dependencies by typing in your terminal : npm i --save
 
 You will need a key to get access to the API from [GIPHY](https://giphy.com/)
 
