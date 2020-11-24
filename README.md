@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Purpose of the Project
+
+This Project was created to improve my coding experience with an API.
+
+![](giphy.gif)
+
+My mains objectives were :
+-Anytime you do a search you can see the results
+-You can chose by categories
+-You can add gif to favorites or remove
+-You can select a random gif or a random gif in a specific categorie
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -45,26 +57,22 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## How to launch the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Install
 
-### Analyzing the Bundle Size
+First of all you need to clone the repostory to a local folder
+![Screenshot](github.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Then you have to install the dependencies by typing in your terminal : npm i --save
 
-### Making a Progressive Web App
+You will need a key to get access to the API from [GIPHY](https://giphy.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Once you have the key juste create a new file ".env" in the root of the project, you should have this :
+![Screenshot](env.png)
+Open the .env file and add your key after : REACT_APP_API_KEY=
+You should have something like : REACT_APP_API_KEY="540a5zea4e55a4e".
 
-### Advanced Configuration
+### Run
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Everything is good now just run the project by typing in your terminal : npm start
