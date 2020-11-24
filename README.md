@@ -1,5 +1,9 @@
 # My Custom Giphy Application
 
+## 📺 Demo
+
+You can test the application [here](https://giphy-app-project.netlify.app/)
+
 ## 📉 Purpose of the Project
 
 This Project was created to improve my coding experience with an API.
