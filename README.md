@@ -73,6 +73,7 @@ Once you have the key juste create a new file ".env" in the root of the project,
 Open the .env file and add your key after : REACT_APP_API_KEY=\
 You should have something like : REACT_APP_API_KEY="540a5zea4e55a4e"
 
+
 ### Run
 
 Everything is good now just run the project by typing in your terminal : npm start
