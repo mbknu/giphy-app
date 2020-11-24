@@ -1,12 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import GifItem from "../Gifs/GifItem";
 import { API_KEY, API_URL } from "../../constants";
-import { SearchContext } from "../../utils/SearchContext";
+import getInitialFavorites from "../../utils/getInitialFavorite";
 
-const TrendingGif = () => {
+const TrendingGif = (toggleFavorite) => {
   const [gifsList, setGifsList] = useState([]);
-  const { searchValue } = useContext(SearchContext);
+  const [favorites, setFavorites] = useState(getInitialFavorites());
+
+  useEffect(() => {
+    localStorage.setItem("addGifToFavorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+
 
   useEffect(() => {
     const getApiUrl = `${API_URL}/trending?api_key=${API_KEY}`;
@@ -25,7 +31,11 @@ const TrendingGif = () => {
     <div className="gifList-wrapper">
       <div className="gifList-container">
         {gifsList.map((gif) => (
-          <GifItem key={gif.id} gif={gif} />
+          <GifItem
+            key={gif.id}
+            gif={gif}
+            toggleFavorite={() => toggleFavorite(gif)}
+          />
         ))}
       </div>
     </div>

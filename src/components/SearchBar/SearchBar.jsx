@@ -2,6 +2,8 @@ import React, { useCallback, useContext, useEffect, useState } from "react";
 import { debounce } from "lodash";
 import { SearchContext } from "../../utils/SearchContext";
 
+import "./searchbar.css";
+
 const SearchBar = () => {
   const { searchValue, setSearchValue } = useContext(SearchContext);
   const [search, setSearch] = useState(searchValue);
@@ -27,6 +29,7 @@ const SearchBar = () => {
   return (
     <div>
       <input
+        className="search-bar"
         type="search"
         placeholder="Search Gifs..."
         value={search}

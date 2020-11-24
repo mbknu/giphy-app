@@ -7,14 +7,15 @@ import GifsList from "../Gifs/GifsList";
 import getApiUrl from "../../utils/getApiUrl";
 import { SearchContext } from "../../utils/SearchContext";
 import getInitialFavorites from "../../utils/getInitialFavorite";
-import { set } from "lodash";
+
+import "./Home.css";
 
 const Home = () => {
   const [gifsList, setGifsList] = useState([]);
   const [categoriesList, setCategoriesList] = useState([]);
   // const [currentOffSet, setCurrentOffSet] = useState(0);
   const [favorites, setFavorites] = useState(getInitialFavorites());
-  const { searchValue } = useContext(SearchContext);
+  const { searchValue, setSearchValue } = useContext(SearchContext);
 
   useEffect(() => {
     const apiUrl = getApiUrl(searchValue);
@@ -50,21 +51,24 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="gif-home">
       {gifsList.length === 0 && categoriesList.length === 0 && (
         <div>No Results</div>
       )}
-      {/* <InfiniteScroll
-        dataLength={gifsList.length}
-        next={setCurrentOffSet(currentOffSet + 1)}
-        hasMore={true}
-        loader={<h4>Loading...</h4>}
-      ></InfiniteScroll> */}
       {categoriesList.length > 0 && (
-        <>
-          <h1>TODO CATEGORIES</h1>
-          {/* <pre>{JSON.stringify(categoriesList, null, 2)} </pre> */}
-        </>
+        <div className="categorie-wrapper">
+          {categoriesList.map((categorie, index) => (
+            <div key={index}>
+              <p
+                className="categorie-name"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSearchValue(`${categorie.name}`)}
+              >
+                {categorie.name}
+              </p>
+            </div>
+          ))}
+        </div>
       )}
 
       {gifsList.length > 0 && (
