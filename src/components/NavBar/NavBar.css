@@ -6,7 +6,7 @@
 }
 
 .navbar {
-  width: 1280px;
+  width: 100%;
   margin: auto;
   min-height: 6vh;
   box-sizing: border-box;
@@ -63,4 +63,10 @@
   transform-origin: center top;
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
+}
+
+@media only screen and (max-width: 720px) {
+  .nav-link {
+    font-size: 10px;
+  }
 }

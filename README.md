@@ -10,6 +10,10 @@ This Project was created to improve my coding experience with an API.
 
 ![](giphy-gif.gif)
 
+And it's responsive
+
+![](responsive.gif)
+
 ## ⚒ What the Application can do :
 
 - The app list all the gif and gif categories from the Giphy API
@@ -17,6 +21,7 @@ This Project was created to improve my coding experience with an API.
 - The user can add or remove gifs to his favorites
 - His Favorites are saved in LocalStorage
 - The user can select a random gif globally or within a categorie
+- Can be use on phone
 
 ## 🦾 Technical Stack
 

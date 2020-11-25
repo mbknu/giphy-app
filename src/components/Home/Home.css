@@ -23,3 +23,23 @@
 .gif-home > .gifList-wrapper {
   width: 100%;
 }
+
+@media only screen and (max-width: 720px) {
+  .categorie-name {
+    font-size: 10px;
+  }
+  .categorie-wrapper {
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .categorie-wrapper {
+    width: 100%;
+  }
+  .gif-home > .gifList-wrapper {
+    display: contents;
+  }
+  .gifList-wrapper {
+    width: 66%;
+  }
+}

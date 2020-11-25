@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import getInitialFavorites from "../../utils/getInitialFavorite";
+
 import GifItem from "../Gifs/GifItem";
+
+import getInitialFavorites from "../../utils/getInitialFavorite";
 
 const Favorited = () => {
   const [favorites, setFavorites] = useState(getInitialFavorites());
