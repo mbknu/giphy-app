@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-// import debounce from "lodash/debounce";
-// import GifItem from "../Gifs/GifItem";
 
 import useRandomGif from "../../utils/useRandomGif";
-// import Loading from "../Loading/Loading";
 
 const RandomTagGif = () => {
   const [tag, setTag] = useState("");
@@ -21,8 +18,6 @@ const RandomTagGif = () => {
         placeholder="Search Random Gif..."
         onChange={(e) => {
           setTag(e.target.value);
-          // const debouncedSubmit = debounce(() => setTag(e.target.value), 1000);
-          // debouncedSubmit();
         }}
       />
       <button style={{ marginTop: "10px" }} onClick={() => fetchGif(tag)}>

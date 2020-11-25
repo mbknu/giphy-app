@@ -1,5 +1,7 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
+
 import { debounce } from "lodash";
+
 import { SearchContext } from "../../utils/SearchContext";
 
 import "./searchbar.css";
