@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+
 import GifItem from "../Gifs/GifItem";
+
 import { API_KEY, API_URL } from "../../constants";
 import getInitialFavorites from "../../utils/getInitialFavorite";
 

@@ -1,12 +1,12 @@
 import React from "react";
 
+import Loading from "../Loading/Loading";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as fasFaStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as falFaStar } from "@fortawesome/free-regular-svg-icons";
 
 import "./GifItem.css";
-
-import Loading from "../Loading/Loading";
 
 const GitItem = ({ gif, isFavorite, toggleFavorite }) => {
   const image = gif.images.downsized_large;

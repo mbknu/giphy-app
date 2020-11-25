@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import Axios from "axios";
-// import InfiniteScroll from "react-infinite-scroll-component";
 
 import GifsList from "../Gifs/GifsList";
+import Loading from "../Loading/Loading";
 
 import getApiUrl from "../../utils/getApiUrl";
 import { SearchContext } from "../../utils/SearchContext";
@@ -13,7 +13,6 @@ import "./Home.css";
 const Home = () => {
   const [gifsList, setGifsList] = useState([]);
   const [categoriesList, setCategoriesList] = useState([]);
-  // const [currentOffSet, setCurrentOffSet] = useState(0);
   const [favorites, setFavorites] = useState(getInitialFavorites());
   const { searchValue, setSearchValue } = useContext(SearchContext);
 
@@ -52,9 +51,7 @@ const Home = () => {
 
   return (
     <div className="gif-home">
-      {gifsList.length === 0 && categoriesList.length === 0 && (
-        <div>No Results</div>
-      )}
+      {gifsList.length === 0 && categoriesList.length === 0 && <Loading />}
       {categoriesList.length > 0 && (
         <div className="categorie-wrapper">
           {categoriesList.map((categorie, index) => (

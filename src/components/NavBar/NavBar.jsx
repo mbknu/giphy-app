@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-
 import { Link } from "react-router-dom";
-import { SearchContext } from "../../utils/SearchContext";
+
 import SearchBar from "../SearchBar/SearchBar";
+
+import { SearchContext } from "../../utils/SearchContext";
 
 import "./NavBar.css";
 
